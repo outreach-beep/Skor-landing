@@ -15,6 +15,8 @@ const content = [
     size: "30",
     mgTop: "0",
     mgLeft: "0",
+    live: true,
+    link: "https://app.skoragents.ai",
   },
   {
     id: "item-2",
@@ -26,6 +28,7 @@ const content = [
     size: "30",
     mgTop: "0",
     mgLeft: "0",
+    live: false,
   },
   {
     id: "item-3",
@@ -37,6 +40,8 @@ const content = [
     size: "30",
     mgTop: "0",
     mgLeft: "0",
+    live: true,
+    link: "https://agent-hunter.skoragents.ai/",
   },
 ];
 
