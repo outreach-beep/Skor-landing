@@ -108,8 +108,8 @@ const CircleCarousel = ({ content }) => {
                     boxShadow: "0px 2px 10px 2px #EE5D4B",
                   }}
                   onClick={() => {
-                    if (index === 0) {
-                      window.open("https://app.skoragents.ai", "_blank");
+                    if (item.live && item.link) {
+                      window.open(item.link, "_blank");
                     }
                   }}
                 >
@@ -133,8 +133,8 @@ const CircleCarousel = ({ content }) => {
                         );
                       })}
                     </div>
-                  ) : index === 0 ? (
-                    <> 🔴 Try now</>
+                  ) : item.live ? (
+                    <> 🔴 Live Now</>
                   ) : (
                     <>Coming Soon</>
                   )}
