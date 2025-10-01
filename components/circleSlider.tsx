@@ -6,6 +6,8 @@ type Slide = {
   title: string;
   agent: string;
   desc: string;
+  live: boolean;
+  link?: string;
 };
 
 type CardSliderProps = {
@@ -102,8 +104,8 @@ const CircleSlider: React.FC<CardSliderProps> = ({ content }) => {
             boxShadow: "0px 2px 5px 2px #EE5D4B",
           }}
           onClick={() => {
-            if (currentIndex === 0) {
-              window.open("https://app.skoragents.ai", "_blank");
+            if (content[currentIndex].live && content[currentIndex].link) {
+              window.open(content[currentIndex].link, "_blank");
             }
           }}
         >
@@ -127,8 +129,8 @@ const CircleSlider: React.FC<CardSliderProps> = ({ content }) => {
                 );
               })}
             </div>
-          ) : currentIndex === 0 ? (
-            <span id="TryNowLanding"> 🔴 Try now </span>
+          ) : content[currentIndex].live ? (
+            <span id="TryNowLanding"> 🔴 Live Now </span>
           ) : (
             <>Coming Soon</>
           )}
